@@ -86,9 +86,21 @@ snapshot_download(
 )
 ```
 
-### SFT 
+### SFT Cold Start
 
+We follow [LLaMA-Factory](https://github.com/hiyouga/LLaMA-Factory) to build this project. Specifically, we use 4 NVIDIA-A100 GPUs for full parameters fine-tuning, and an example is as follows:
 
+```
+bash ./SFT_Cold_Start/Qwen-LongCoT-sft.sh
+```
+
+### Multi-Turn RL Training
+
+We follow [open-r1](https://github.com/huggingface/open-r1) to build this project. For single-node training of LLM models across 8 GPUs. We first spin up the vLLM server to run on 1 GPU for offline LLM sampling, 1 GPU for online LLM sampling, and then use 6 GPUs for RL training. An example is as follows:
+
+```
+bash ./Multi_Turn_RL/multi_turn_RL_LongCoT.sh
+```
 
 
 
