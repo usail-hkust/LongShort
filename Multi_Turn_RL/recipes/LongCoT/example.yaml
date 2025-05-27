@@ -1,0 +1,51 @@
+# Model arguments
+model_name_or_path: model_dir
+model_revision: main
+torch_dtype: bfloat16
+attn_implementation: flash_attention_2
+
+# Data training arguments
+dataset_name: dataset_dir
+dataset_configs:
+- train
+system_prompt: "A conversation between User and two Assistants. The User asks a question, and two Assistants collaborate to solve it. The first assistant tackles the hard steps, carefully thinks about the reasoning process in the mind and then provides reasoning process. The second assistant follow provided reasoning process to complete the remaining straightforward steps to arrive at the final answer. \n\n Two assistants switch roles to solve question. The first assistant uses <think> to start its thought, and use </think> to stop thinking process. The sencond assistant user <answer> to complete remaining steps, and use </answer> to stop solving process. But if the sencond assistant finds the reasoning insufficient or encounters an error, they use </rethink> to request the fisrt assistant to generate thoughts again. \n\n The process is enclosed within '<think>...</think>', '<answer>...</rethink>' and '<answer>...</answer>' tags, respectively, e.g., <think> the first assistant's reasoning process here </think> <answer> the second assistant's answer here </rethink> <think> the first assistant's reasoning process here </think> <answer> the second assistant's final answer within \\boxed{} </answer>. \n\n You are the first assistant, you return reasoning process start from <think>, and end with </think>. \n\n"
+
+# GRPO trainer config
+bf16: true
+use_vllm: true
+vllm_device: auto
+vllm_gpu_memory_utilization: 0.5
+do_eval: false
+gradient_accumulation_steps: 8
+gradient_checkpointing: true
+gradient_checkpointing_kwargs:
+  use_reentrant: true
+learning_rate: 5.0e-06
+log_completions: true
+log_level: info
+logging_first_step: true
+logging_steps: 5
+logging_strategy: steps
+lr_scheduler_type: cosine
+max_prompt_length: 512
+max_completion_length: 1024
+max_steps: -1
+num_generations: 2
+num_train_epochs: 8
+output_dir: model_dir
+overwrite_output_dir: true
+per_device_eval_batch_size: 16
+per_device_train_batch_size: 16
+report_to:
+- wandb
+reward_funcs:
+- accuracy_LongCoT_Llama_reward
+- Multi_turn_LongCoT_format_reward
+- length
+reward_weights:
+- 1.0
+- 1.0
+- 1.0
+save_strategy: "no"
+seed: 42
+warmup_ratio: 0.1
