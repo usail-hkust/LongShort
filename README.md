@@ -7,3 +7,24 @@
 ![License: CC BY 4.0](https://img.shields.io/badge/license-CC%20BY%204.0-blue)
 
 </p>
+
+<p align="center">
+
+| **[1 Introduction](#introduction)** 
+| **[2 Requirements](#requirements)**
+| **[3 Usage](#usage)**
+| **[4 Citation](#citation)**
+
+</p>
+
+## 1 Introduction
+<div style="display: flex; justify-content: center;">
+  <img src="https://github.com/usail-hkust/LongShort/blob/main/figure/fig1.png">
+</div>
+
+Official code for paper "[Not All Thoughts are Generated Equal: Efficient LLM Reasoning via Multi-Turn Reinforcement Learning](https://arxiv.org/pdf/2505.11827)".
+
+Long⊗Short is an efficient reasoning framework that enables two LLMs to collaboratively solve the problem: a long-thought LLM for more effectively generating important thoughts, while a short-thought LLM for efficiently generating remaining thoughts.
+
+
+
