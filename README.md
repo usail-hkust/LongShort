@@ -37,5 +37,14 @@ conda create -n python3.11 LongShort
 source activate LongShort
 ```
 
+Then, install vLLM and FlashAttention:
+
+```
+pip install vllm==0.8.4
+pip install setuptools && pip install flash-attn --no-build-isolation
+```
+
+
+
 
 
