@@ -26,7 +26,7 @@ Official code for paper "[Not All Thoughts are Generated Equal: Efficient LLM Re
 
 Long⊗Short is an efficient reasoning framework that enables two LLMs to collaboratively solve the problem: a long-thought LLM for more effectively generating important thoughts, while a short-thought LLM for efficiently generating remaining thoughts.
 
-## 2. Requirements
+## 2 Requirements
 
 This project rely on CUDA 12.6. If you see errors related to segmentation faults, double check the version your system is running with nvcc --version.
 
@@ -49,6 +49,45 @@ Then, you can install the remaining dependencies via requirements file:
 ```
 pip install -r requirements.txt
 ```
+
+As we will visualize our project on wandb, you can log into your accounts as follows:
+
+```
+wandb login
+```
+
+## 3 Usage
+
+The training of Long⊗Short is divided into automatic LongCoT chunking, SFT cold-start, and multi-turn RL training process.
+
+### Automatic LongCoT Chunking
+
+To conduct LongCoT chunking, you need to set your LongCoT trajectories and the output results_dir:
+
+```
+bash ./LongCoT_chunking/block_generate.sh "$model_dir" "$dataset_dir" "$result_dir"
+```
+
+We also release our [OpenMath-ThoughtChunk1.8K](https://huggingface.co/datasets/yasNing/OpenMath-ThoughtChunk1.8K) on Hugging Face, you can download from Hugging Face:
+
+```
+from huggingface_hub import snapshot_download
+
+repo_id = "yasNing/OpenMath-ThoughtChunk1.8K" 
+local_dir = "./data/LongCoT1.8K/OpenMath-ThoughtChunk1.8K"  
+local_dir_use_symlinks = False  #
+token = "YOUR_KEY"  # hugging face access token
+
+snapshot_download(
+    repo_id=repo_id,
+    local_dir=local_dir,
+    local_dir_use_symlinks=local_dir_use_symlinks,
+    token=token
+)
+```
+
+### SFT 
+
 
 
 
