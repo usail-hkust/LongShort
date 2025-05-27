@@ -26,7 +26,7 @@ Official code for paper "[Not All Thoughts are Generated Equal: Efficient LLM Re
 
 Long⊗Short is an efficient reasoning framework that enables two LLMs to collaboratively solve the problem: a long-thought LLM for more effectively generating important thoughts, while a short-thought LLM for efficiently generating remaining thoughts.
 
-## 2. Installation
+## 2. Requirements
 
 This project rely on CUDA 12.6. If you see errors related to segmentation faults, double check the version your system is running with nvcc --version.
 
