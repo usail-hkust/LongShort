@@ -102,5 +102,18 @@ We follow [open-r1](https://github.com/huggingface/open-r1) to build this projec
 bash ./Multi_Turn_RL/multi_turn_RL_LongCoT.sh
 ```
 
+## 4 Citation
+
+If you find our work is useful for your research, please consider citing:
+
+```
+@article{ning2025not,
+  title={Not All Thoughts are Generated Equal: Efficient LLM Reasoning via Multi-Turn Reinforcement Learning},
+  author={Ning, Yansong and Li, Wei and Fang, Jun and Tan, Naiqiang and Liu, Hao},
+  journal={arXiv preprint arXiv:2505.11827},
+  year={2025}
+}
+```
+
 
 
