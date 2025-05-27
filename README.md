@@ -10,10 +10,10 @@
 
 <p align="center">
 
-| **[1 Introduction](#introduction)** 
-| **[2 Requirements](#requirements)**
-| **[3 Usage](#usage)**
-| **[4 Citation](#citation)**
+| **[1 Introduction](##introduction)** 
+| **[2 Requirements](##requirements)**
+| **[3 Usage](##usage)**
+| **[4 Citation](##citation)**
 
 </p>
 
