@@ -40,10 +40,15 @@ source activate LongShort
 Then, install vLLM and FlashAttention:
 
 ```
-pip install vllm==0.8.4
+pip install vllm==0.7.2
 pip install setuptools && pip install flash-attn --no-build-isolation
 ```
 
+Then, you can install the remaining dependencies via requirements file:
+
+```
+pip install -r requirements.txt
+```
 
 
 
