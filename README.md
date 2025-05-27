@@ -1,4 +1,4 @@
-# Not All Thoughts are Generated Equal: Efficient LLM Reasoning via Multi-Turn Reinforcement Learning
+# Not All Thoughts are Generated Equal: Efficient LLM Reasoning via Multi-Turn Reinforcement Learning ([PDF](https://arxiv.org/pdf/2505.11827))
 
 <p align="center">
 
