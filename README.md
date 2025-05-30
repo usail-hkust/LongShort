@@ -68,6 +68,12 @@ To conduct LongCoT chunking, you need to set your LongCoT trajectories and the o
 bash ./LongCoT_chunking/block_generate.sh "$model_dir" "$dataset_dir" "$result_dir"
 ```
 
+The model_dir is the directory of LLM you used for automatic chunking, and the dataset_dir is the JSONL file that satisfies the following format:
+
+```
+{"problem": "", "solution": "", "answer": "", "response": ""}
+```
+where response is the corresponding LongCoT response for the given problem, while solution and answer are the ground-truth.
 We also release our [OpenMath-ThoughtChunk1.8K](https://huggingface.co/datasets/yasNing/OpenMath-ThoughtChunk1.8K) on Hugging Face, you can download from Hugging Face:
 
 ```
